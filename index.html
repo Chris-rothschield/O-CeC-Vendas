@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chris Virtual Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Chris Store</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><button onclick="abrirCarrinho()">Carrinho</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>Bem-vindo à Chris Store</h1>
+    <p>Produtos virtuais com estilo e exclusividade</p>
+  </section>
+
+  <section id="categorias">
+    <h2>Categorias</h2>
+    <div class="categorias">
+      <button onclick="filtrarCategoria('ebooks')">E-books</button>
+      <button onclick="filtrarCategoria('cursos')">Cursos</button>
+      <button onclick="filtrarCategoria('assinaturas')">Assinaturas</button>
+      <button onclick="filtrarCategoria('templates')">Templates</button>
+    </div>
+  </section>
+
+  <section id="produtos">
+    <h2>Produtos</h2>
+    <div class="produtos-container">
+      <div class="produto" data-categoria="ebooks">
+        <img src="ebook.jpg" alt="E-book 1" />
+        <h3>E-book Marketing Digital</h3>
+        <p>R$ 29,90</p>
+        <button onclick="adicionarCarrinho('E-book Marketing Digital', 29.90)">Comprar</button>
+      </div>
+
+      <div class="produto" data-categoria="cursos">
+        <img src="curso.jpg" alt="Curso" />
+        <h3>Curso de Programação</h3>
+        <p>R$ 199,90</p>
+        <button onclick="adicionarCarrinho('Curso de Programação', 199.90)">Comprar</button>
+      </div>
+
+      <div class="produto" data-categoria="assinaturas">
+        <img src="assinatura.jpg" alt="Assinatura" />
+        <h3>Assinatura Mensal Premium</h3>
+        <p>R$ 49,90</p>
+        <button onclick="adicionarCarrinho('Assinatura Premium', 49.90)">Comprar</button>
+      </div>
+
+      <div class="produto" data-categoria="templates">
+        <img src="template.jpg" alt="Template" />
+        <h3>Template HTML Profissional</h3>
+        <p>R$ 79,90</p>
+        <button onclick="adicionarCarrinho('Template HTML', 79.90)">Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="carrinho" class="carrinho">
+    <h3>Seu Carrinho</h3>
+    <ul id="lista-carrinho"></ul>
+    <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+    <button onclick="fecharCarrinho()">Fechar</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Chris Store. Todos os direitos reservados.</p>
+    <p><a href="#">Termos</a> | <a href="#">Privacidade</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
